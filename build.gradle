@@ -1,0 +1,60 @@
+
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.11'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+
+group = 'su.serviceit'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.projectlombok:lombok:1.18.26'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.postgresql', name: 'postgresql', version: '42.6.0'
+	implementation "javax.persistence:javax.persistence-api:2.2"
+	implementation "org.liquibase:liquibase-core"
+	implementation "org.springframework.boot:spring-boot-starter-security"
+	implementation group: 'org.keycloak', name: 'keycloak-spring-boot-starter', version: '21.1.1'
+	implementation group: 'org.keycloak', name: 'keycloak-spring-security-adapter', version: '21.1.1'
+	implementation 'org.keycloak:keycloak-adapter-core:21.1.1'
+
+}
+
+def versionPropsFile = file('version.properties')
+
+if(versionPropsFile.canRead()) {
+	def Properties versionProps = new Properties()
+	versionProps.load(new FileInputStream(versionPropsFile))
+	def date = new Date().format("yyMMddHHmm")
+
+	ext {
+		lastModifiedTime = date
+	}
+
+	versionProps['LAST_MODIFIED_TIME'] = date
+	versionProps.store(versionPropsFile.newWriter(), null)
+} else {
+	throw new GradleException("Could not read version.properties!")
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

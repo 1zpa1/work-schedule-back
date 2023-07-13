@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="create_menu_table" author="postgres">
+        <createTable tableName="side_menu">
+            <column autoIncrement="true" name="id_menu" type="bigint">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="nm_title" type="varchar(64)"/>
+            <column name="nm_icon" type="varchar(64)"/>
+            <column name="nm_route" type="varchar(64)"/>
+        </createTable>
+        <createIndex indexName="i_side_menu_1" tableName="side_menu" unique="true">
+            <column name="nm_title"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>

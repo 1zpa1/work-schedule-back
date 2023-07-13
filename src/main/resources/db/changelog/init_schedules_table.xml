@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="init_schedules_table" author="liquibase">
+        <insert tableName="sec_schedules">
+            <column name="dt_date" value="2023-02-05" />
+        </insert>
+        <insert tableName="sec_schedules">
+            <column name="dt_date" value="2023-03-26" />
+        </insert>
+        <insert tableName="sec_schedules">
+            <column name="dt_date" value="2023-04-11" />
+        </insert>
+        <insert tableName="sec_schedules">
+            <column name="dt_date" value="2023-05-22" />
+        </insert>
+        <insert tableName="sec_schedules">
+            <column name="dt_date" value="2023-05-23" />
+        </insert>
+        <insert tableName="sec_schedules">
+            <column name="dt_date" value="2023-05-24" />
+        </insert>
+        <insert tableName="sec_schedules">
+            <column name="dt_date" value="2023-05-25" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>

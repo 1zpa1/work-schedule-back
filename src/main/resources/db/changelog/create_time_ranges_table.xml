@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="create_table_schedules" author="liquibase">
+        <createTable  tableName="sec_time_ranges">
+            <column autoIncrement="true" name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="dt_start_time" type="TIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dt_end_time" type="TIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="task_description" type="VARCHAR(225)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_user" type="bigint">
+                <constraints foreignKeyName="fk_sec_time_ranges_1" referencedTableName="sec_users" referencedColumnNames="id"/>
+            </column>
+            <column name="id_schedule" type="bigint">
+                <constraints foreignKeyName="fk_sec_time_ranges_2" referencedTableName="sec_schedules" referencedColumnNames="id"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
+
+

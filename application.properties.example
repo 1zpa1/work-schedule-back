@@ -1,0 +1,35 @@
+#это файл с примерами настроек, все настройки используемые в данном проекте, должны быть здесь указаны. Логины, пароли должны быть пустыми.
+#
+
+
+
+
+#settings data base
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+spring.datasource.driverClassName=org.postgresql.Driver
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto = none
+spring.liquibase.change-log=classpath:/db/changelog/changelog.xml
+
+spring.liquibase.enabled=true
+spring.main.allow-bean-definition-overriding=true
+
+server.port=9190
+
+spring.main.allow-circular-references=true
+
+
+#keycloak`s settings
+keycloak.enabled=true
+keycloak.auth-server-url=
+keycloak.realm=test
+keycloak.ssl-required=external
+keycloak.resource=
+keycloak.credentials.secret=
+keycloak.use-resource-role-mappings=false
+keycloak.verify-token-audience=true
+keycloak.confidential-port=0
+
+logout.success-url=

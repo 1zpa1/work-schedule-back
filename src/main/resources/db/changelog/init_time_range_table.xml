@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="init_time_range_table" author="liquibase">
+        <insert tableName="sec_time_ranges">
+            <column name="dt_start_time" value="07:08:32" />
+            <column name="dt_end_time" value="11:03:22" />
+            <column name="task_description" value="Решение проблемы с Docker" />
+            <column name="id_user" value="1" />
+            <column name="id_schedule" value="1" />
+        </insert>
+        <insert tableName="sec_time_ranges">
+            <column name="dt_start_time" value="08:25:59" />
+            <column name="dt_end_time" value="16:56:23" />
+            <column name="task_description" value="Решение проблемы с Key Cloack" />
+            <column name="id_user" value="2" />
+            <column name="id_schedule" value="2" />
+        </insert>
+        <insert tableName="sec_time_ranges">
+            <column name="dt_start_time" value="10:12:25" />
+            <column name="dt_end_time" value="21:53:15" />
+            <column name="task_description" value="Заполнение таблиц" />
+            <column name="id_user" value="1" />
+            <column name="id_schedule" value="3" />
+        </insert>
+        <insert tableName="sec_time_ranges">
+            <column name="dt_start_time" value="14:25:26" />
+            <column name="dt_end_time" value="15:28:29" />
+            <column name="task_description" value="Поиск и замена обоев рабочего стола" />
+            <column name="id_user" value="2" />
+            <column name="id_schedule" value="4" />
+        </insert>
+        <insert tableName="sec_time_ranges">
+            <column name="dt_start_time" value="06:47:45" />
+            <column name="dt_end_time" value="10:41:32" />
+            <column name="task_description" value="Поход за мороженым" />
+            <column name="id_user" value="1" />
+            <column name="id_schedule" value="5" />
+        </insert>
+        <insert tableName="sec_time_ranges">
+            <column name="dt_start_time" value="00:46:12" />
+            <column name="dt_end_time" value="12:50:35" />
+            <column name="task_description" value="Написание отчета" />
+            <column name="id_user" value="2" />
+            <column name="id_schedule" value="6" />
+        </insert>
+        <insert tableName="sec_time_ranges">
+            <column name="dt_start_time" value="11:25:23" />
+            <column name="dt_end_time" value="20:15:39" />
+            <column name="task_description" value="Написание кода" />
+            <column name="id_user" value="1" />
+            <column name="id_schedule" value="7" />
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
